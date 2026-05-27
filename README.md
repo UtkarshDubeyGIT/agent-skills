@@ -10,6 +10,11 @@ Repository of agent behavior rules for coding assistants.
 
 - Use `CLAUDE.md` as your agent instructions file.
 - Update it to fit your team's workflow and tooling.
+- Download the latest `CLAUDE.md` from anywhere:
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/UtkarshDubeyGIT/agent-instructions/main/CLAUDE.md -o CLAUDE.md
+```
 
 ## Inspiration
 
