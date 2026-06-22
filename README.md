@@ -1,27 +1,37 @@
+<p align="center">
+  <img src="https://img.shields.io/npm/v/@npmdubey/agent-skills?style=flat-square&labelColor=1a1a1a&color=6366f1" alt="npm version">
+  <img src="https://img.shields.io/npm/dm/@npmdubey/agent-skills?style=flat-square&labelColor=1a1a1a&color=6366f1" alt="npm downloads">
+  <img src="https://img.shields.io/github/stars/UtkarshDubeyGIT/agent-skills?style=flat-square&labelColor=1a1a1a&color=f59e0b" alt="stars">
+</p>
+
+<br>
+
 # agent-skills
 
-Repository of curated agent behavioral rules and composable skills for coding assistants.
-Works with **any** coding agent across **all major platforms**.
+Curated behavioral rules and composable skills for coding agents.
+Works with **any** agent — OpenCode, Codex CLI, Antigravity, Claude Code, Cursor, Copilot, Junie.
 
-Also available as [`@npmdubey/agent-skills`](https://www.npmjs.com/package/@npmdubey/agent-skills) on npm.
+<p align="center">
+  <code>npx @npmdubey/agent-skills link</code>
+</p>
+
+<br>
 
 ## Quick Start
 
-### Zero-install (via npx)
+### Zero-install
 
 ```bash
 cd your-project
 npx @npmdubey/agent-skills link
 ```
 
-No install, no clone, no PATH setup. Runs anywhere Node.js is available.
+No install, no clone, no PATH setup.
 
 ### Install globally
 
 ```bash
 npm install -g @npmdubey/agent-skills
-
-# Then in any project:
 cd your-project
 agent-skills link
 ```
@@ -29,105 +39,81 @@ agent-skills link
 ### On a new machine
 
 ```bash
-npx @dubey/agent-skills init
+npx @npmdubey/agent-skills init
 # or:
 curl -fsSL https://raw.githubusercontent.com/UtkarshDubeyGIT/agent-skills/main/init.sh | bash
 ```
 
-Clones the suite to `~/agent-skills/`, adds to shell config, sets up the `suite-link` alias.
+## Platform Coverage
 
-### Manual download
+Running `link` generates adapters for **all** platforms in your project:
 
-```bash
-curl -fsSL https://raw.githubusercontent.com/UtkarshDubeyGIT/agent-skills/main/AGENTS.md -o AGENTS.md
-```
+| Platform | Config File | How It Reads Your Rules |
+|---|---|---|
+| OpenCode | `AGENTS.md` | Reads natively |
+| Codex CLI | `AGENTS.md` | Reads natively |
+| Antigravity App | `AGENTS.md` | Reads natively + SKILL.md |
+| Antigravity CLI | `AGENTS.md` | Reads natively + SKILL.md |
+| Claude Code | `CLAUDE.md` | Delegates to AGENTS.md |
+| Cursor | `.cursor/rules/*.mdc` | Delegates to AGENTS.md |
+| Copilot | `.github/copilot-instructions.md` | Delegates to AGENTS.md |
+| Junie | `.junie/guidelines.md` | Delegates to AGENTS.md |
 
----
-
-After running `link` in a project, the file tree looks like:
+Every adapter points back to the same canonical source — `AGENTS.md`.
+One source of truth, eight platforms.
 
 ```
 your-project/
-├── AGENTS.md                    → OpenCode, Codex CLI, Antigravity, Claude Code (fallback)
+├── AGENTS.md                    → OpenCode, Codex CLI, Antigravity
 ├── CLAUDE.md                    → Claude Code
 ├── .cursor/rules/               → Cursor
 ├── .github/copilot-instructions.md → Copilot
 └── .junie/guidelines.md         → Junie
 ```
 
-**All adapters point to the same canonical rules in `AGENTS.md`.**
-One source of truth, eight platforms.
+## Skills
 
----
+Reusable workflows any agent can follow:
 
-## Platform Coverage
+| Command | What It Does |
+|---|---|
+| `/grill-me` | Alignment interview — agent asks, summarizes, builds |
+| `/tdd` | Red-Green-Refactor — test first, implement, clean up |
+| `/handoff` | Compresses conversation into a handoff doc for another agent |
+| `/diagnosing-bugs` | Reproduce → Minimize → Fix → Verify |
 
-| Platform | Config File | How It Reads Your Rules |
-|----------|-------------|------------------------|
-| OpenCode | `AGENTS.md` | Reads natively |
-| Codex CLI | `AGENTS.md` | Reads natively |
-| Antigravity App | `AGENTS.md` | Reads natively + supports SKILL.md |
-| Antigravity CLI | `AGENTS.md` | Reads natively + supports SKILL.md |
-| Claude Code | `CLAUDE.md` | Reads CLAUDE.md → delegates to AGENTS.md |
-| Cursor | `.cursor/rules/*.mdc` | Reads .mdc → delegates to AGENTS.md |
-| Copilot | `.github/copilot-instructions.md` | Reads instructions → delegates to AGENTS.md |
-| Junie | `.junie/guidelines.md` | Reads guidelines → delegates to AGENTS.md |
-
----
+> Agents read these as markdown files from `skills/`. They're referenced in `AGENTS.md`.
 
 ## Structure
 
 ```
 agent-skills/
-├── AGENTS.md              # Canonical behavioral rules (cross-platform)
-├── CLAUDE.md              # Claude Code adapter (thin — delegates to AGENTS.md)
-├── link.sh                # Generate platform adapters in any project
-├── init.sh                # Bootstrap on a new machine
-│
-├── skills/                # Composable agent workflows
-│   ├── grill-me.md        # Alignment interview before building
-│   ├── tdd.md             # Test-driven development loop
-│   ├── handoff.md         # Compact context for agent handoffs
-│   └── diagnosing-bugs.md # Systematic bug diagnosis
-│
-├── UI/
-│   ├── SHADCN-REFERENCE.md  # Shadcn UI component reference
-│   └── SHADCN-SKILL.md      # Shadcn UI skill with spacing and conventions
-│
-└── README.md
+├── AGENTS.md              # Canonical behavioral rules
+├── CLAUDE.md              # Claude Code adapter
+├── link.sh                # Shell link script
+├── init.sh                # Bootstrap script
+├── package.json           # npm package
+├── bin/agent-skills.js    # CLI — link, init
+├── skills/                # Composable workflows
+│   ├── grill-me.md
+│   ├── tdd.md
+│   ├── handoff.md
+│   └── diagnosing-bugs.md
+└── UI/                    # Shadcn reference + skill
+    ├── SHADCN-REFERENCE.md
+    └── SHADCN-SKILL.md
 ```
-
----
-
-## Skills
-
-Skills are reusable workflows any agent can follow. Invoke them in conversation:
-
-| Command | What It Does |
-|---------|-------------|
-| `/grill-me` | Agent interviews you about what you're building → shared understanding → builds |
-| `/tdd` | Red-Green-Refactor cycle — test first, then implement, then clean up |
-| `/handoff` | Compresses conversation into a handoff doc for another agent |
-| `/diagnosing-bugs` | Reproduce → Minimize → Hypothesize → Fix → Verify |
-
-> To use a skill, the agent just reads the corresponding markdown file.
-> The skills directory is referenced in `AGENTS.md` so all agents know where to find them.
-
----
 
 ## Design Philosophy
 
-Inspired by Andrej Karpathy (minimal, self-contained, teaching-oriented code) and
-Matt Pocock (composable skills, alignment before building, strong feedback loops).
+Inspired by Andrej Karpathy (minimal, self-contained, teaching-oriented) and Matt Pocock (composable skills, alignment before building, strong feedback loops).
 
-- **One canonical source** — maintain `AGENTS.md`, adapters auto-generated.
-- **Composable skills** — small, transparent, single-purpose markdown files.
-- **Works everywhere** — no platform lock-in. Same rules, every agent.
-- **Living artifact** — evolves as the landscape shifts. Start minimal, compound.
-
----
+- **One canonical source** — maintain `AGENTS.md`, adapters auto-generated
+- **Composable skills** — small, transparent, single-purpose markdown files
+- **Works everywhere** — no platform lock-in
+- **Living artifact** — evolves with the landscape. Start minimal, compound.
 
 ## Inspiration
 
-Sourced from [multica-ai/andrej-karpathy-skills](https://github.com/multica-ai/andrej-karpathy-skills)
-and [mattpocock/skills](https://github.com/mattpocock/skills).
+- [mattpocock/skills](https://github.com/mattpocock/skills)
+- [multica-ai/andrej-karpathy-skills](https://github.com/multica-ai/andrej-karpathy-skills)
