@@ -1,11 +1,3 @@
-<p align="center">
-  <img src="https://badgen.net/npm/v/@npmdubey/agent-skills?color=6366f1&labelColor=1a1a1a&scale=1.1" alt="npm version">
-  <img src="https://badgen.net/npm/dm/@npmdubey/agent-skills?color=6366f1&labelColor=1a1a1a&scale=1.1" alt="npm downloads">
-  <img src="https://img.shields.io/github/stars/UtkarshDubeyGIT/agent-skills?style=flat-square&labelColor=1a1a1a&color=f59e0b" alt="stars">
-</p>
-
-<br>
-
 # agent-skills
 
 Curated behavioral rules and composable skills for coding agents.
