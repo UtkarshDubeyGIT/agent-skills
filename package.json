@@ -1,8 +1,17 @@
 {
-  "name": "@dubey/agent-skills",
+  "name": "@npmdubey/agent-skills",
   "version": "1.0.0",
   "description": "Portable agent working suite — behavioral rules, skills, and adapters for any coding agent",
-  "keywords": ["agent", "skills", "ai", "claude", "cursor", "copilot", "opencode", "codex"],
+  "keywords": [
+    "agent",
+    "skills",
+    "ai",
+    "claude",
+    "cursor",
+    "copilot",
+    "opencode",
+    "codex"
+  ],
   "license": "MIT",
   "author": "Utkarsh Dubey",
   "homepage": "https://github.com/UtkarshDubeyGIT/agent-skills#readme",
@@ -14,7 +23,7 @@
     "url": "https://github.com/UtkarshDubeyGIT/agent-skills/issues"
   },
   "bin": {
-    "agent-skills": "./bin/agent-skills.js"
+    "agent-skills": "bin/agent-skills.js"
   },
   "files": [
     "bin/",

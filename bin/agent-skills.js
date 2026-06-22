@@ -1,8 +1,8 @@
 #!/usr/bin/env node
-// @dubey/agent-skills — portable agent working suite CLI
+// @npmdubey/agent-skills — portable agent working suite CLI
 // Usage:
-//   npx @dubey/agent-skills link     # generate adapters in cwd
-//   npx @dubey/agent-skills init     # install suite on this machine
+//   npx @npmdubey/agent-skills link     # generate adapters in cwd
+//   npx @npmdubey/agent-skills init     # install suite on this machine
 
 const fs = require('fs');
 const path = require('path');
@@ -131,12 +131,12 @@ switch (cmd) {
     break;
   default:
     console.log(`
-  @dubey/agent-skills — portable agent working suite
+  @npmdubey/agent-skills — portable agent working suite
 
   Usage:
-    npx @dubey/agent-skills link     Generate adapters in current project
-    npx @dubey/agent-skills init     Install suite on this machine
-    npm install -g @dubey/agent-skills
+    npx @npmdubey/agent-skills link     Generate adapters in current project
+    npx @npmdubey/agent-skills init     Install suite on this machine
+    npm install -g @npmdubey/agent-skills
     agent-skills link
 `);
 }

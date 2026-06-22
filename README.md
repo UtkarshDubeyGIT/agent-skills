@@ -3,7 +3,7 @@
 Repository of curated agent behavioral rules and composable skills for coding assistants.
 Works with **any** coding agent across **all major platforms**.
 
-Also available as [`@dubey/agent-skills`](https://www.npmjs.com/package/@dubey/agent-skills) on npm.
+Also available as [`@npmdubey/agent-skills`](https://www.npmjs.com/package/@npmdubey/agent-skills) on npm.
 
 ## Quick Start
 
@@ -11,7 +11,7 @@ Also available as [`@dubey/agent-skills`](https://www.npmjs.com/package/@dubey/a
 
 ```bash
 cd your-project
-npx @dubey/agent-skills link
+npx @npmdubey/agent-skills link
 ```
 
 No install, no clone, no PATH setup. Runs anywhere Node.js is available.
@@ -19,7 +19,7 @@ No install, no clone, no PATH setup. Runs anywhere Node.js is available.
 ### Install globally
 
 ```bash
-npm install -g @dubey/agent-skills
+npm install -g @npmdubey/agent-skills
 
 # Then in any project:
 cd your-project
