@@ -1,6 +1,6 @@
 <p align="center">
-  <img src="https://img.shields.io/npm/v/@npmdubey/agent-skills?style=flat-square&labelColor=1a1a1a&color=6366f1" alt="npm version">
-  <img src="https://img.shields.io/npm/dm/@npmdubey/agent-skills?style=flat-square&labelColor=1a1a1a&color=6366f1" alt="npm downloads">
+  <img src="https://badgen.net/npm/v/@npmdubey/agent-skills?color=6366f1&labelColor=1a1a1a&scale=1.1" alt="npm version">
+  <img src="https://badgen.net/npm/dm/@npmdubey/agent-skills?color=6366f1&labelColor=1a1a1a&scale=1.1" alt="npm downloads">
   <img src="https://img.shields.io/github/stars/UtkarshDubeyGIT/agent-skills?style=flat-square&labelColor=1a1a1a&color=f59e0b" alt="stars">
 </p>
 
