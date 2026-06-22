@@ -3,25 +3,48 @@
 Repository of curated agent behavioral rules and composable skills for coding assistants.
 Works with **any** coding agent across **all major platforms**.
 
+Also available as [`@dubey/agent-skills`](https://www.npmjs.com/package/@dubey/agent-skills) on npm.
+
 ## Quick Start
+
+### Zero-install (via npx)
+
+```bash
+cd your-project
+npx @dubey/agent-skills link
+```
+
+No install, no clone, no PATH setup. Runs anywhere Node.js is available.
+
+### Install globally
+
+```bash
+npm install -g @dubey/agent-skills
+
+# Then in any project:
+cd your-project
+agent-skills link
+```
 
 ### On a new machine
 
 ```bash
+npx @dubey/agent-skills init
+# or:
 curl -fsSL https://raw.githubusercontent.com/UtkarshDubeyGIT/agent-skills/main/init.sh | bash
 ```
 
-This clones the suite to `~/agent-skills/` and sets up the `suite-link` alias.
+Clones the suite to `~/agent-skills/`, adds to shell config, sets up the `suite-link` alias.
 
-### In any project
+### Manual download
 
 ```bash
-cd your-project
-suite-link
-# or: ~/agent-skills/link.sh
+curl -fsSL https://raw.githubusercontent.com/UtkarshDubeyGIT/agent-skills/main/AGENTS.md -o AGENTS.md
 ```
 
-This generates adapter files that all your agents can read:
+---
+
+After running `link` in a project, the file tree looks like:
 
 ```
 your-project/
@@ -34,12 +57,6 @@ your-project/
 
 **All adapters point to the same canonical rules in `AGENTS.md`.**
 One source of truth, eight platforms.
-
-### Manual download
-
-```bash
-curl -fsSL https://raw.githubusercontent.com/UtkarshDubeyGIT/agent-skills/main/AGENTS.md -o AGENTS.md
-```
 
 ---
 
