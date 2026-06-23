@@ -19,7 +19,7 @@ jobs:
   publish:
     runs-on: ubuntu-latest
     permissions:
-      contents: read
+      contents: write
       id-token: write
 
     steps:
@@ -39,15 +39,26 @@ jobs:
           PUBLISHED=$(npm view ${{ github.event.repository.name }} version 2>/dev/null || echo "none")
           LOCAL=$(node -p "require('./package.json').version")
           if [ "$PUBLISHED" = "$LOCAL" ]; then
-            echo "skip=true" >> $GITHUB_OUTPUT
-            echo "Version $LOCAL already published — skipping"
+            echo "bump=true" >> "$GITHUB_OUTPUT"
+            echo "Version $LOCAL already published — bumping patch"
           else
-            echo "skip=false" >> $GITHUB_OUTPUT
-            echo "New version $LOCAL — publishing"
+            echo "bump=false" >> "$GITHUB_OUTPUT"
+            echo "New version $LOCAL — publishing as-is"
           fi
 
+      - name: Auto-bump version
+        if: steps.check.outputs.bump == 'true'
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+          npm version patch --no-git-tag-version
+          NEW_VER=$(node -p "require('./package.json').version")
+          git add package.json
+          git commit -m "Bump to $NEW_VER [skip ci]"
+          git push
+          echo "Bumped to $NEW_VER"
+
       - name: Publish to npm
-        if: steps.check.outputs.skip != 'true'
         run: npm publish --provenance
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
