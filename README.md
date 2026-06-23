@@ -86,15 +86,41 @@ agent-skills/
 ├── init.sh                # Bootstrap script
 ├── package.json           # npm package
 ├── bin/agent-skills.js    # CLI — link, init
+├── skills-lock.json       # Skills CLI lockfile
+│
 ├── skills/                # Composable workflows
-│   ├── grill-me.md
-│   ├── tdd.md
-│   ├── handoff.md
-│   └── diagnosing-bugs.md
-└── UI/                    # Shadcn reference + skill
-    ├── SHADCN-REFERENCE.md
-    └── SHADCN-SKILL.md
+│   ├── grill-me.md        # Alignment interview
+│   ├── tdd.md             # TDD loop
+│   ├── handoff.md         # Context handoff
+│   └── diagnosing-bugs.md # Bug diagnosis
+│
+├── UI/                    # Shadcn reference + skill
+│   ├── SHADCN-REFERENCE.md
+│   └── SHADCN-SKILL.md
+│
+└── .agents/skills/        # Design skills (via skills CLI)
+    ├── web-design-guidelines/     # Vercel — UI review & compliance
+    ├── design-taste-frontend/     # Anti-slop frontend design
+    ├── frontend-design/           # Anthropic — visual design guidance
+    ├── high-end-visual-design/    # High-end agency design patterns
+    ├── firecrawl-website-design-clone/ # Extract design systems
+    └── sleek-design-mobile-apps/  # Mobile app design via Sleek
 ```
+
+## Skills
+
+| Command | What It Does |
+|---|---|
+| `/grill-me` | Alignment interview — agent asks, summarizes, builds |
+| `/tdd` | Red-Green-Refactor — test first, implement, clean up |
+| `/handoff` | Compresses conversation into a handoff doc |
+| `/diagnosing-bugs` | Reproduce → Minimize → Fix → Verify |
+| `/design-review` | Vercel web interface guidelines compliance audit |
+| `/design-frontend` | Anti-slop frontend design for landing pages & portfolios |
+| `/design-high-end` | High-end agency design patterns (fonts, shadows, animations) |
+| `/design-anthropic` | Anthropic's distinctive visual design guidance |
+| `/design-clone` | Extract full design system from any website via Firecrawl |
+| `/design-mobile` | Mobile app design via Sleek |
 
 ## Design Philosophy
 

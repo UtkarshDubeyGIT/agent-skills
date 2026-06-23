@@ -103,6 +103,12 @@ These files define reusable workflows. Read them when the user invokes the corre
 | `/tdd` | `skills/tdd.md` | Test-driven development loop |
 | `/diagnosing-bugs` | `skills/diagnosing-bugs.md` | Systematic debug workflow |
 | `/handoff` | `skills/handoff.md` | Compact context for agent handoffs |
+| `/design-review` | `.agents/skills/web-design-guidelines/SKILL.md` | Vercel web interface guidelines review |
+| `/design-frontend` | `.agents/skills/design-taste-frontend/SKILL.md` | Anti-slop frontend design for landing pages |
+| `/design-high-end` | `.agents/skills/high-end-visual-design/SKILL.md` | High-end agency visual design patterns |
+| `/design-anthropic` | `.agents/skills/frontend-design/SKILL.md` | Anthropic's distinctive visual design guidance |
+| `/design-clone` | `.agents/skills/firecrawl-website-design-clone/SKILL.md` | Extract design system from any website |
+| `/design-mobile` | `.agents/skills/sleek-design-mobile-apps/SKILL.md` | Mobile app design via Sleek |
 
 ---
 
