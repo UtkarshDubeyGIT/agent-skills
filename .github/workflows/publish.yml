@@ -33,7 +33,21 @@ jobs:
       - name: Validate package
         run: npm pack --dry-run 2>&1 | head -5
 
+      - name: Check if version already published
+        id: check
+        run: |
+          PUBLISHED=$(npm view ${{ github.event.repository.name }} version 2>/dev/null || echo "none")
+          LOCAL=$(node -p "require('./package.json').version")
+          if [ "$PUBLISHED" = "$LOCAL" ]; then
+            echo "skip=true" >> $GITHUB_OUTPUT
+            echo "Version $LOCAL already published — skipping"
+          else
+            echo "skip=false" >> $GITHUB_OUTPUT
+            echo "New version $LOCAL — publishing"
+          fi
+
       - name: Publish to npm
+        if: steps.check.outputs.skip != 'true'
         run: npm publish --provenance
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
