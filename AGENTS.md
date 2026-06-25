@@ -123,6 +123,11 @@ These files define reusable workflows. Read them when the user invokes the corre
 | `/webapp-testing` | `.agents/skills/webapp-testing/SKILL.md` | Playwright web app testing toolkit (Anthropic) |
 | `/agent-browser` | `.agents/skills/agent-browser/SKILL.md` | Browser automation CLI for agents (Vercel) |
 
+**Data & Visualization**
+| Command | File | Purpose |
+|---------|------|---------|
+| `/data-viz` | `.agents/skills/data-visualization/SKILL.md` | Python charts: matplotlib, seaborn, plotly (Anthropic) |
+
 ---
 
 ## Rule of thumb

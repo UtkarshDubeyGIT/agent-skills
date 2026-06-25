@@ -108,7 +108,8 @@ agent-skills/
     ├── find-skills/               # Vercel — discover new skills
     ├── agent-browser/             # Vercel — browser automation CLI
     ├── webapp-testing/            # Anthropic — Playwright testing
-    └── test-driven-development/   # Obra — comprehensive TDD
+    ├── test-driven-development/   # Obra — comprehensive TDD
+    └── data-visualization/        # Anthropic — Python charts
 ```
 
 ## Skills
@@ -138,6 +139,11 @@ agent-skills/
 |---|---|
 | `/webapp-testing` | Playwright web app testing toolkit (Anthropic) |
 | `/agent-browser` | Browser automation CLI for agents (Vercel) |
+
+### Data & Visualization
+| Command | What It Does |
+|---|---|
+| `/data-viz` | Python charts: matplotlib, seaborn, plotly — Anthropic |
 
 ## Design Philosophy
 
