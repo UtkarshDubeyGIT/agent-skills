@@ -5,6 +5,7 @@ on:
     branches: [main]
     paths:
       - package.json
+      - .github/workflows/**
       - bin/**
       - AGENTS.md
       - CLAUDE.md
@@ -53,6 +54,14 @@ jobs:
         run: |
           git config user.name "github-actions"
           git config user.email "github-actions@github.com"
+          git remote -v
+          echo "=== Git status before bump ==="
+          git status
+          echo "=== Branch ==="
+          git branch --show-current
+          echo "=== Remote URL ==="
+          git remote get-url origin
+          echo "=== Bumping version ==="
           node -e "
             const p = require('./package.json');
             const v = p.version.split('.').map(Number);
@@ -62,9 +71,12 @@ jobs:
           "
           NEW_VER=$(node -p "require('./package.json').version")
           git add package.json
+          git status
+          echo "=== Committing ==="
           git commit -m "Bump to $NEW_VER [skip ci]"
-          git push origin HEAD:main
-          echo "Bumped to $NEW_VER"
+          echo "=== Pushing ==="
+          git push origin HEAD:main 2>&1
+          echo "=== Done, bumped to $NEW_VER ==="
 
       - name: Publish to npm
         run: npm publish --provenance
