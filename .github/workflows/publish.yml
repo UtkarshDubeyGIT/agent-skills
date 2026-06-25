@@ -39,7 +39,7 @@ jobs:
       - name: Check if version already published
         id: check
         run: |
-          PUBLISHED=$(npm view ${{ github.event.repository.name }} version 2>/dev/null || echo "none")
+          PUBLISHED=$(npm view $(node -p "require('./package.json').name") version 2>/dev/null || echo "none")
           LOCAL=$(node -p "require('./package.json').version")
           if [ "$PUBLISHED" = "$LOCAL" ]; then
             echo "bump=true" >> "$GITHUB_OUTPUT"
