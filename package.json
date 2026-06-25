@@ -1,6 +1,6 @@
 {
   "name": "@npmdubey/agent-skills",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Portable agent working suite — behavioral rules, skills, and adapters for any coding agent",
   "keywords": [
     "agent",
