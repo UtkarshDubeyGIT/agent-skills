@@ -109,7 +109,8 @@ agent-skills/
     ├── agent-browser/             # Vercel — browser automation CLI
     ├── webapp-testing/            # Anthropic — Playwright testing
     ├── test-driven-development/   # Obra — comprehensive TDD
-    └── data-visualization/        # Anthropic — Python charts
+    ├── data-visualization/        # Anthropic — Python charts
+    └── humanize/                  # Custom — de-AI text, restore human voice
 ```
 
 ## Skills
@@ -133,6 +134,11 @@ agent-skills/
 | `/design-anthropic` | Anthropic's distinctive visual design guidance |
 | `/design-clone` | Extract full design system from any website via Firecrawl |
 | `/design-mobile` | Mobile app design via Sleek |
+
+### Writing & Editing
+| Command | What It Does |
+|---|---|
+| `/humanize` | De-AI text: remove LLM tells, restore human voice |
 
 ### Testing & Automation
 | Command | What It Does |

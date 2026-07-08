@@ -117,6 +117,11 @@ These files define reusable workflows. Read them when the user invokes the corre
 | `/design-clone` | `.agents/skills/firecrawl-website-design-clone/SKILL.md` | Extract design system from any website |
 | `/design-mobile` | `.agents/skills/sleek-design-mobile-apps/SKILL.md` | Mobile app design via Sleek |
 
+**Writing & Editing**
+| Command | File | Purpose |
+|---------|------|---------|
+| `/humanize` | `.agents/skills/humanize/SKILL.md` | De-AI text: remove LLM tells, restore human voice |
+
 **Testing & Automation**
 | Command | File | Purpose |
 |---------|------|---------|
