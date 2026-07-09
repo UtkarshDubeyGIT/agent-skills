@@ -31,6 +31,12 @@
       "skillPath": "skills/firecrawl-website-design-clone/SKILL.md",
       "computedHash": "64cf5cbcebeb488bc22fca92f2b4a2cc5d8ce4f9b4a63ec69efe06667422a8ed"
     },
+    "frontend-slides": {
+      "source": "zarazhangrui/frontend-slides",
+      "sourceType": "github",
+      "skillPath": "SKILL.md",
+      "computedHash": "832994fe1dfcce2aa7ceca9a1b7b708eca94becef242713999855f4e946cf4d5"
+    },
     "frontend-design": {
       "source": "anthropics/skills",
       "sourceType": "github",

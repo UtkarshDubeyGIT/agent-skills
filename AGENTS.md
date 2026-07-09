@@ -116,6 +116,7 @@ These files define reusable workflows. Read them when the user invokes the corre
 | `/design-anthropic` | `.agents/skills/frontend-design/SKILL.md` | Anthropic's distinctive visual design guidance |
 | `/design-clone` | `.agents/skills/firecrawl-website-design-clone/SKILL.md` | Extract design system from any website |
 | `/design-mobile` | `.agents/skills/sleek-design-mobile-apps/SKILL.md` | Mobile app design via Sleek |
+| `/frontend-slides` | `.agents/skills/frontend-slides/SKILL.md` | Stunning zero-dep HTML presentations — pitch decks, talks, PPTX→web conversion |
 
 **Writing & Editing**
 | Command | File | Purpose |
