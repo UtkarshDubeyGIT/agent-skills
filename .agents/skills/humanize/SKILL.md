@@ -81,7 +81,7 @@ Fix: don't just swap in a thesaurus synonym — that just trades one generic wor
 
 - **Boldface used mechanically** for "key takeaways" style emphasis on every instance of a term. Fix: remove almost all of it; bold only what would genuinely be bolded in the surrounding style.
 
-- **Em dashes used as a tic** — reaching for " — " (with spaces) where a comma, period, colon, or parenthesis would be more natural, especially to punch up a rhetorical contrast. Fix: swap most of them for the punctuation a human editor in that context would actually use. Keep an em dash only where it's the clearly best tool.
+- **No dashes of any kind. Hard rule.** This includes em dashes (—), en dashes (–), and hyphens (-) used as punctuation. Replace every dash with a period, comma, or restructure the sentence. Do not leave a single dash in the output. This is zero-tolerance. Not "reduce" or "use sparingly." Zero.
 
 - **Curly ("smart") quotes and apostrophes** inconsistently mixed with straight ones, or used where the target platform expects straight quotes (wikitext, code, plain text fields). Fix: match whatever quote style the destination actually uses. Note this one is weak on its own — lots of legitimate tools (Word, iOS, CMOS-style publishing) also produce curly quotes.
 
@@ -116,7 +116,17 @@ These are common mistakes people make when trying to "fix" AI-sounding text. Avo
 
 1. **Word-swap instead of content-fix.** Replacing "delve into" with "explore" doesn't help if the sentence around it is still a generic significance-statement. Fix the substance first; the vocabulary quirks usually resolve themselves.
 
-2. **Treating symptoms as the problem.** The em dashes and bold lists are not themselves the policy violation — they're clues pointing to deeper issues (synthesis, OR, puffery, lack of sourcing). Fix the deep problem and the surface tells often disappear naturally.
+### Dash-specific anti-patterns
+
+These are the most common excuses for leaving a dash in. Do not fall for them.
+
+- **"The original had an em dash for a dramatic pause."** Replace with a period. The pause still works.
+- **"It is a compound modifier, not really a dash."** Use plain words. "Real-time" becomes "live" or "instant." "Cross-platform" becomes "works everywhere" or restructure the sentence.
+- **"The hyphen is part of a proper noun."** If it is unavoidable (e.g. a trademark), keep it. Otherwise restructure to avoid the hyphen.
+- **"It is a span of numbers, so en dash is correct."** Use "to" instead. "2025 to 2026" not "2025–2026."
+- **"But the quote I am citing has an em dash."** Modernize the quotation by replacing the dash with a period or restructured phrasing. Preservation of original punctuation is less important than the hard rule.
+
+2. **Treating symptoms as the problem.** The em dashes and bold lists are not themselves the policy violation — they are clues pointing to deeper issues (synthesis, OR, puffery, lack of sourcing). Fix the deep problem and the surface tells often disappear naturally.
 
 3. **Overcorrection.** Stripping out every transition word, every big word, and every em dash in a panic produces text that's worse, not better. Human writing includes all of these things in moderation.
 
@@ -126,4 +136,6 @@ These are common mistakes people make when trying to "fix" AI-sounding text. Avo
 
 ## Output
 
-Unless the user asks for a diff or a list of changes, just return the rewritten text directly, preserving the original's format (plain text, Markdown, wikitext, etc.) and length envelope — humanizing should not turn a short paragraph into a much longer one, or vice versa, since padding itself is often part of the AI signature. If the piece is long or the user seems to want to understand the specific changes, briefly summarize the main patterns that were fixed after delivering the rewrite (e.g., "removed 4 generic significance statements, cut the em-dash overuse, converted the bulleted list to prose").
+Unless the user asks for a diff or a list of changes, just return the rewritten text directly, preserving the original's format (plain text, Markdown, wikitext, etc.) and length envelope — humanizing should not turn a short paragraph into a much longer one, or vice versa, since padding itself is often part of the AI signature. If the piece is long or the user seems to want to understand the specific changes, briefly summarize the main patterns that were fixed after delivering the rewrite (e.g., "removed 4 generic significance statements, removed all dashes, converted the bulleted list to prose").
+
+**Final check before delivering: scan the entire output for any dash character (—, -, -). If one exists, remove it by rewriting the sentence. Do not deliver output containing a dash.**
