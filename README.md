@@ -110,6 +110,7 @@ agent-skills/
     ├── webapp-testing/            # Anthropic — Playwright testing
     ├── test-driven-development/   # Obra — comprehensive TDD
     ├── data-visualization/        # Anthropic — Python charts
+    ├── frontend-slides/           # zara — zero-dep HTML presentations
     └── humanize/                  # Custom — de-AI text, restore human voice
 ```
 
@@ -134,6 +135,7 @@ agent-skills/
 | `/design-anthropic` | Anthropic's distinctive visual design guidance |
 | `/design-clone` | Extract full design system from any website via Firecrawl |
 | `/design-mobile` | Mobile app design via Sleek |
+| `/frontend-slides` | Zero-dep HTML presentations — talks, pitch decks, PPTX→web |
 
 ### Writing & Editing
 | Command | What It Does |
